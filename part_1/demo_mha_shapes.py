@@ -20,6 +20,7 @@ if __name__ == "__main__":
     os.makedirs(os.path.dirname(OUT_TXT), exist_ok=True)
     open(OUT_TXT, 'w').close()
 
+    # essential that d_model is divisible by n_head, in this case each of heads wll have 4 dimension
     B, T, d_model, n_head = 1, 5, 12, 3
     d_head = d_model // n_head
     x = torch.randn(B, T, d_model)
